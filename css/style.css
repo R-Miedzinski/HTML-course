@@ -1,0 +1,641 @@
+/*
+--- 01 Typography System
+
+rem - root element font-size, default for most browsers is 16px
+
+- FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+ default: 400
+ medium: 500
+ Semi-bold: 600
+ Bold: 700
+
+- Line heights
+ defaul: 1
+1.05
+1.2
+Paragraph: 1.6
+
+ - Letter spacing
+-0.5px
+0.75px
+
+--- 02 Colors */
+:root {
+  /* Colors */
+  --Primary-color: #e67e22;
+  /* Tints */
+  --Very-light-primary: #fdf2e9;
+  --Light-primary: #fae5d3;
+  --Slightly-lighter-primary: #e98b38;
+  --Lighter-primary: #eb984e;
+  /* Shades */
+  --Slightly-darker-primary: #cf711f;
+  --Dark-primary: #2e1907;
+  /* Accents */
+  /* Grays */
+  --Primary-gray: #555;
+  --Darker-gray: #333;
+  /* Greens */
+  --Normal-green: #51cf66;
+  --Light-green: #94d82d;
+  --Yellowish-green: #ffd43b;
+}
+/*
+
+--- 03 Images
+free photos: unsplash
+free face photos: ui faces
+
+
+--- 04 Icons
+
+--- 05 Shadows
+
+--- 06 Border Radius
+
+Default: 0px
+
+--- 07 Whitespace
+
+- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+/* -------------- */
+/* Header */
+/* -------------- */
+
+.header {
+  background-color: var(--Very-light-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* we'll use it to make a 'sticky' header */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+
+.logo {
+  height: 2rem;
+}
+
+/* -------------- */
+/* Navigation */
+/* -------------- */
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 3.2rem;
+
+  align-items: center;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--Darker-gray);
+  font-weight: 500;
+  font-size: 1.8rem;
+
+  transition: all 300ms;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: var(--Slightly-darker-primary);
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+
+  background-color: var(--Primary-color);
+  color: #fff;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: var(--Slightly-darker-primary);
+}
+
+/* -------------- */
+/* Hero Section */
+/* -------------- */
+
+.section-hero {
+  background-color: var(--Very-light-primary);
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+  /* margin: 0 auto;
+  
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem; */
+  max-width: 130rem;
+  align-items: center;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+.meals-delivered {
+  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 3px solid var(--Very-light-primary);
+}
+
+.delivered-imgs img:last-child {
+  margin-right: 0;
+}
+
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.delivered-text span {
+  color: var(--Slightly-darker-primary);
+  font-weight: 700;
+}
+
+/* -------------- */
+/* Featured in section */
+/* -------------- */
+
+.section-featured {
+  padding: 4.8rem 0 3.2rem 0;
+}
+
+.heading-featured-in {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #888;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.logos img {
+  height: 3.2rem;
+  filter: brightness(0);
+  opacity: 50%;
+}
+
+/* -------------- */
+/* How it Works section */
+/* -------------- */
+
+.section-how {
+  padding: 9.6rem 0;
+}
+
+/* .step-text-box {
+} */
+
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #ccc;
+  margin-bottom: 1.2rem;
+}
+
+.step-description {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.step-img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.step-img {
+  width: 35%;
+}
+
+.step-img-box::before {
+  content: "";
+  display: block;
+  width: 60%;
+  /* height: 60%; */
+  padding-bottom: 60%;
+  border-radius: 50%;
+  background-color: var(--Very-light-primary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* how to put the circle behhind the image? */
+  z-index: -2;
+}
+
+.step-img-box::after {
+  content: "";
+  display: block;
+  width: 45%;
+  /* height: 60%; */
+  padding-bottom: 45%;
+  border-radius: 50%;
+  background-color: var(--Light-primary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* how to put the circle behhind the image? */
+  z-index: -1;
+}
+
+/* -------------- */
+/* Diets section */
+/* -------------- */
+
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.07);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 500ms;
+}
+
+.meals-img {
+  width: 100%;
+}
+
+.meal-content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+}
+
+.meal-tags {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: #333;
+  border-radius: 100px;
+  font-weight: 500;
+}
+
+.tag--vegetarian {
+  background-color: var(--Normal-green);
+}
+
+.tag--vegan {
+  background-color: var(--Light-green);
+}
+
+.tag--paleo {
+  background-color: var(--Yellowish-green);
+}
+
+.meal-name {
+  font-size: 2rem;
+  color: var(--Darker-gray);
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.meal-attributes li {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.meal-icon {
+  color: var(--Primary-color);
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.meal:hover {
+  transform: translate(0, -1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.all-recipies {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* -------------- */
+/* Testimonials section */
+/* -------------- */
+
+.section-testimonials {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+  background-color: var(--Very-light-primary);
+}
+
+.testimonials-container {
+  padding: 9.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+}
+
+.testimonial-img {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.gallery-item {
+  overflow: clip;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  transition: all 400ms;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.2);
+}
+
+/* -------------- */
+/* Pricing and Features */
+/* -------------- */
+
+.section-pricing {
+  padding: 9.6rem 0;
+}
+
+.pricing-plan {
+  border-radius: 11px;
+  width: 75%;
+}
+
+.pricing-plan--starter {
+  justify-self: end;
+  background-color: none;
+  padding: 4.8rem;
+  padding: -2px;
+  border: solid 2px var(--Very-light-primary);
+}
+
+.pricing-plan--complete {
+  background-color: var(--Very-light-primary);
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-plan--complete::after {
+  display: inline-block;
+  content: "Best Value";
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 0.8rem 5.6rem;
+  color: #333;
+  background-color: var(--Yellowish-green);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(25%, 125%) rotate(45deg);
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+
+.plan-name {
+  color: var(--Slightly-darker-primary);
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75;
+  margin-bottom: 3.2rem;
+}
+
+.plan-price {
+  font-size: 6.2rem;
+  font-weight: 600;
+  color: var(--Darker-gray);
+  margin-bottom: 1.6rem;
+}
+
+.plan-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+
+.plan-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #6f6f6f;
+}
+
+.plan-sign-up {
+  margin-top: 4.8rem;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5.4rem;
+  gap: 9.6rem;
+}
+
+.features-text {
+  font-size: 1.6rem;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: row;
+  gap: 7.4rem;
+}
+
+.feature ion-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  padding: 1.6rem;
+  color: var(--Primary-color);
+  background-color: var(--Very-light-primary);
+  border-radius: 50%;
+  margin-bottom: 3.2rem;
+}
+
+.feature-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+
+.feature-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/* -------------- */
+/* CTA */
+/* -------------- */
+
+.section-cta {
+  background-color: var(--Primary-color);
+  border-radius: 11px;
+  overflow: hidden;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.2);
+  margin-bottom: 9.6rem;
+
+  background-image: linear-gradient(
+    to top left,
+    var(--Primary-color),
+    var(--Lighter-primary)
+  );
+}
+
+.cta--grid {
+  grid-template-columns: 3fr 2fr;
+  justify-content: center;
+  padding-left: 4.8rem;
+}
+
+.cta {
+  display: flex;
+  margin-top: 4.8rem;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+
+.cta-text {
+  color: var(--Dark-primary);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.cta-img {
+  background-image: linear-gradient(
+      to top left,
+      rgba(230, 126, 34, 0.3),
+      rgba(233, 139, 56, 0.3)
+    ),
+    url("../img/eating.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+  margin-bottom: 4.8rem;
+}
+
+.cta-form label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  color: var(--Dark-primary);
+}
+
+.cta-form input,
+.cta-form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  border: none;
+  background-color: var(--Very-light-primary);
+  border-radius: 11px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: inherit;
+}
+
+.cta-form input::placeholder {
+  color: #aaa;
+}
+
+.cta *:focus {
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}

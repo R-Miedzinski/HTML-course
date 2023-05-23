@@ -1,0 +1,309 @@
+:root {
+  /* would not change with user changed default font-size */
+  /* font-size: 10px; */
+  /* to assimilate users who want to change dafult size, 
+  we can set size to percentage value of pur choosing */
+  font-size: 62.5%;
+  /* with this setting we scale default 16px to 10px
+  now 1rem = 10px */
+  /* Colors */
+  --Primary-color: #e67e22;
+  /* Tints */
+  --Very-light-primary: #fdf2e9;
+  --Light-primary: #fae5d3;
+  /* Shades */
+  --Slightly-darker-primary: #cf711f;
+  --Dark-primary: #2e1907;
+  /* Accents */
+  /* Grays */
+  --Primary-gray: #555;
+  --Darker-gray: #333;
+  /* Greens */
+  --Normal-green: #51cf66;
+  --Light-green: #94d82d;
+  --Yellowish-green: #ffd43b;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+  /* outline: 4px dotted red; */
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+
+body {
+  font-family: "Rubik", "Inter", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--Primary-gray);
+}
+
+/* -------------- */
+/* General Components */
+/* -------------- */
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  row-gap: 9.6rem;
+  column-gap: 6.4rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--footer {
+  grid-template-columns: repeat(2, 1.5fr) repeat(3, 1fr);
+}
+
+.grid--center-v {
+  align-self: center;
+}
+
+.grid--center-h {
+  justify-self: center;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: var(--Darker-gray);
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  line-height: 1.2;
+  font-size: 4.4rem;
+  margin-bottom: 9.6rem;
+}
+
+.subheading {
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--Slightly-darker-primary);
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.heading-cta {
+  font-size: 3rem;
+  line-height: 1.2;
+  /* margin-bottom: 3.2rem; */
+  color: var(--Dark-primary);
+}
+
+.btn:link,
+.btn:visited,
+.btn {
+  display: inline-block;
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  font-weight: 600;
+
+  transition: all /* what we want to animate */ 300ms
+    /* Time over which to make the transition */;
+
+  border: none;
+  cursor: pointer;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: var(--Primary-color);
+  color: #fff;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: var(--Primary-gray);
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: var(--Slightly-darker-primary);
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: var(--Very-light-primary);
+
+  /* Trick to add border inside the element */
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.btn--form {
+  background-color: var(--Dark-primary);
+  color: var(--Very-light-primary);
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: var(--Very-light-primary);
+  color: var(--Dark-primary);
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: var(--Primary-color);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 300ms;
+}
+
+.link:hover,
+.link:active {
+  color: var(--Slightly-darker-primary);
+  border-bottom: 1px solid transparent;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list li {
+  font-size: 1.8rem;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list li ion-icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--Primary-color);
+}
+/* helper class to add margin, we set important to overwright any existing margins */
+.margin-right-hc {
+  margin-right: 1.6rem !important;
+}
+
+.margin-bottom-hc {
+  margin-bottom: 4.8rem !important;
+}
+
+.center-text {
+  text-align: center;
+}
+
+strong {
+  font-weight: 500;
+}
+
+/* -------------- */
+/* Footer */
+/* -------------- */
+
+footer {
+  border-top: 2px solid var(--Very-light-primary);
+  padding: 12.8rem 2.4rem;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* footer img {
+  width: 100%;
+  margin-bottom: 4rem;
+} */
+
+.footer-icons {
+  display: flex;
+  width: 100%;
+  gap: 2.4rem;
+  /* justify-content: space-between; */
+}
+
+/* .footer-col .logo {
+  margin-bottom: 4rem;
+} */
+
+.footer-icons ion-icon {
+  color: #767676;
+  font-size: 2.2rem;
+}
+
+.footer-copy {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+  margin-top: auto;
+}
+
+.footer-header {
+  color: #555;
+  font-size: 1.8rem;
+  /* margin-bottom: 4rem; */
+  font-weight: 500;
+}
+
+.footer-col ul {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.footer-col ul li {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.btn-footer:link,
+.btn-footer:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #767676;
+  cursor: pointer;
+}
+
+.btn-footer:hover,
+.btn-footer:active {
+  text-decoration: none;
+  color: #767676;
+}
